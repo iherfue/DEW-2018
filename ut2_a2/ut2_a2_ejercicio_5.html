@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lan="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        var contador = 0;
+        for (var i = 1; i < 501; i++) {
+
+            if (i % 3 == 0) {
+
+                console.log(i);
+            }
+            
+            primo(i);
+        }
+        console.log("Hay " + contador + " numeros primos");
+
+        function primo(numero) {
+
+            for (var j = 2; j < numero; j++) {
+
+                if (numero % j == 0) {
+
+                    return;
+                }
+                
+            }
+            return contador++;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lan="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+    
+        function verParImpar(){
+
+            var dato = document.getElementById('txtdato').value;
+            
+            if(dato % 2 == 0){
+
+                console.log("Es par");
+            }else {
+
+                console.log("Es impar");
+            }
+
+        }
+    </script>
+
+    <span>Ver Resultado</span>
+    <br/>
+    <input type="text" id="txtdato">
+    <br/>
+    <input type="button" onclick="verParImpar();" value="Pulsar"/>
+</body>
+</html>
