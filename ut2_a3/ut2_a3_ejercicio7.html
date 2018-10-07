@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    
+    <script>
+        
+        var usuario = prompt("Nombre de usuario");  //pedimos el usuario y contraseña al usuario
+        var contrasenia = prompt("Contraseña");
+
+        function existeLogin(usuario){  //comprobamos si coincide el login con el login que hemos creado
+
+            const user = "ivan";
+            if(usuario == user ){
+
+                return true;
+            }else {
+
+                alert("El nombre de usuario no existe");
+                return false;
+            }
+
+            
+        }
+
+        function passwordCorrecto(contrasenia){ //lo mismo con la contraseña
+
+            const password = "1234";
+
+            if(contrasenia == password){
+
+                return true;
+            }else {
+
+                alert("la contraseña no coincide");
+
+                return false;
+            }
+
+           
+        }
+    
+        if(existeLogin(usuario) && passwordCorrecto(contrasenia)){
+
+        alert("el nombre de usuario y la contraseña son correctos");
+
+        }
+
+    
+    </script>
+
+</body>
+</html>

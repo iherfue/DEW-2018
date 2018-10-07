@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    
+    <script>
+var intentos = 1;
+    
+while(intentos <= 5 && intentos !=0){
+
+        var usuario = prompt("Nombre de usuario");  //pedimos al usuario el login y password
+        var contrasenia = prompt("Contraseña");
+
+        var nombres = ["pepe","paco","juan","benito","manuel"]; //creo un array nombres y otra de contra
+        var contra = ["12345","23456","09876","67890","666666"];
+
+        function existeLogin(usuario){      //una funcion que comprueba que el login del usuario esta en el array usuario
+
+            if(nombres.includes(usuario) ){
+                alert("usuario valido");
+                return true;
+            }else {
+
+                alert("El nombre de usuario no existe");
+                intentos++;
+                return false;
+            }
+
+            
+        }
+
+        function passwordCorrecto(contrasenia){     //en la contraseña he creado un doble bucle que recorrera los dos arrays y comprobara si lo que introduce el 
+                                                    //usuario coincide con las posiciones del array 
+            for(var i = 0; i<nombres.length;i++){
+                
+                for(var j = 0; j < contra.length; j++){
+
+                //   console.log(nombres[i],contra[i]);
+
+                    if(contrasenia == contra[i] && usuario == nombres[i]){
+
+                        alert("La contraseña " + contrasenia + " coincide con el usuario " + usuario);
+                        intentos = 0;
+                        return true;
+                    }
+                    
+                }   
+
+               
+            }
+
+           return false;
+           
+        }
+        
+        //si las funciones devuelven true se notifica al usuario
+
+        if(existeLogin(usuario) && passwordCorrecto(contrasenia)){
+
+        alert("el nombre de usuario y la contraseña son correctos");
+
+        }
+
+        //si la funcion comprueba password devuelve false se notifica al usuario
+
+        if(!passwordCorrecto(contrasenia)){
+
+            alert("La contraseña no coincide con el usuario");
+            intentos++;
+        }
+}
+    
+    </script>
+
+</body>
+</html>

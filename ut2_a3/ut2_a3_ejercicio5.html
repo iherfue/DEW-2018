@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ivan</title>
+</head>
+<body>
+    <script>
+        
+        var operador1 = prompt("Introduce el primer operador");   //pedimos al usuario los dos operadores
+        var operador2 = prompt("Introduce el segundo operador");
+
+        if(operador1 == "" || operador2 ==  ""){            //comprobamos si alguno de los operadores está vacio en ese caso se notifica el error
+
+            alert("parametros vacios");
+
+        }
+
+        var operador = prompt("Introduce el signo de operacion a realizar");  //el usuario introduce el signo de la operación a realizar
+
+        //validacion del operador
+
+        function validaOperador(operador){          
+
+            var operadores = ["+","-","*","/"]; //he creado un array con los signos de las operaciones permitidos
+
+            if(operadores.includes(operador)){  //hacemos una comparacion si el operador del usuario se incluye en el array operadores se notifica
+
+                alert("Operador valido");
+
+                return true;
+
+            }else if(operador != operadores.includes(operador) || operador == "") {  //en otro caso se le dice que no vale
+
+                alert("operador no valido");
+
+                return false;
+            }
+            
+        }
+
+            //valida la operacion
+
+            function validaOperando(operador1,operador2){  //entran dos argumentos a la funcion operador1 y operador2
+
+                var calculo = operador;     //asigno a una variable el operador y empiezo a comparar
+                if(calculo == "*"){
+
+                   alert(operador1 * operador2);
+
+                }else if(calculo == "+"){
+
+
+                    alert(parseInt(operador1) + parseInt(operador2));
+
+                }else if( calculo == "-"){
+
+                    alert(operador1 - operador2);
+
+                }else if(calculo == "/"){
+
+                    divisionValida(operador1,operador2);
+                }
+
+                return true;
+             }
+
+             //compruebo divisor
+        function divisionValida(operador1,operador2){  
+
+            if(operador2 == ""){
+
+                alert("El operador es nulo no se resuelve la división");
+
+                return false;
+                
+            }else {
+
+                var division = operador1 / operador2;
+                alert(division);
+            }
+
+            return true;
+
+        }
+
+       console.log(validaOperador(operador));
+       console.log(validaOperando(operador1,operador2));
+
+    </script>
+</body>
+</html>

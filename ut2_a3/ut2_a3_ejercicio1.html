@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>nIvan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        
+    var numero = prompt("Introduzca un número entre 1 y 100");   //pedimos al usuario que introduzca un numero
+    
+    if(numero < 1 || numero > 100 || numero == ""){             //se comprueba si el numero es menor a 1 o mayor a 100 o no se introduce nada
+
+        alert("Ha ocurrido un error")
+    }
+
+    var divisor = [2,3,5,10]; //creamos un array de los divisores
+
+    function esDivisible(numero,divisor){ //la funcion toma como dos argumentos el numero introducido y el divisor del array
+
+        for(var i = 0; i<= divisor.length;i++){ //creamos un for que recorra el array y mientras el numero / el divisor = 0 mostrara con quien
+                                                    //es divisible, sumaremos +1 a la i para que siga recorriendo
+            while(numero % divisor[i] == 0){
+
+                console.log("Es divisible entre " + divisor[i]);
+                i++;    
+            }
+            
+        }       
+    }
+        
+esDivisible(numero,divisor); //llamamos a la funcion pasando como argumento el numero del usuario y los divisiores
+
+
+    </script>
+</body>
+</html>

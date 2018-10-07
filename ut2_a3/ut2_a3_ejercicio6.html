@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>    
+
+while(operador1 != "fin" || operador2 != "fin"){    //mientras el usuario no introduzca fin el script seguira
+
+            var operador1 = prompt("Introduce el primer operador");
+            var operador2 = prompt("Introduce el segundo operador");
+
+            if(operador1 == "" || operador2 ==  ""){
+
+                alert("parametros vacios");
+
+            }else{
+
+            var operador = prompt("Introduce el signo de operacion a realizar");
+            }
+
+        function validaOperador(operador){
+
+            var operadores = ["+","-","*","/"];
+
+            if(operadores.includes(operador)){
+
+                alert("Operador valido");
+
+                return true;
+
+            }else if(operador != operadores.includes(operador) || operador == "") {
+
+                alert("operador no valido");
+
+                return false;
+            }
+            
+        }
+
+            
+            function validaOperando(operador1,operador2){
+
+                var calculo = operador;
+                if(calculo == "*"){
+
+                   alert(operador1 * operador2);
+
+                }else if(calculo == "+"){
+
+
+                    alert(parseInt(operador1) + parseInt(operador2));
+
+                }else if( calculo == "-"){
+
+                    alert(operador1 - operador2);
+
+                }else if(calculo == "/"){
+
+                    divisionValida(operador1,operador2);
+                }
+
+                return true;
+             }
+
+        function divisionValida(operador1,operador2){
+
+            if(operador2 == ""){
+
+                alert("El operador es nulo no se resuelve la división");
+
+                return false;
+                
+            }else {
+
+                var division = operador1 / operador2;
+                alert(division);
+            }
+
+            return true;
+
+        }
+
+        
+       console.log(validaOperador(operador));
+       console.log(validaOperando(operador1,operador2));
+
+    
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+
+    <script>
+        
+       var tamanio = prompt("Introduce el tamaño de tu pantalla");  //pido el numero por pantalla
+       
+       function esPositivo(tamanio){    //le paso a la funcion el parametro que solicito al usuario y empiezo con las comparaciones
+
+           if(tamanio <= 6){
+
+               console.log("es un smartphone");
+
+           } else if(tamanio >= 6 && tamanio <=11){
+
+               console.log("Es una tablet");
+
+           } else if(tamanio >=11 && tamanio <=13){
+
+               console.log("es un netbook");
+           } else if(tamanio > 13){
+
+               console.log("es un portatil");
+           } 
+       }
+
+       
+       console.log(esPositivo(tamanio)); //llamo a la función y le asigno como argunmento la varibale que introduce el usuario
+
+    </script>
+
+</body>
+</html>

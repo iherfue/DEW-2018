@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+    
+    <script>
+var intentos = 0;  //cremamos una variable de intentos
+    
+while(intentos <= 5){   //mientras los intentos sean menor a 5 seguira pidiendo al usuario toda la informacion
+
+        var usuario = prompt("Nombre de usuario");
+        var contrasenia = prompt("Contraseña");
+
+        function existeLogin(usuario){
+
+            const user = "ivan";
+            if(usuario == user ){
+
+                return true;
+            }else {
+
+                alert("El nombre de usuario no existe"); 
+                intentos++;   //si no existe el usuario se suma un intento fallido
+                return false;
+            }
+
+            
+        }
+
+        function passwordCorrecto(contrasenia){
+
+            const password = "1234";
+
+            if(contrasenia == password){
+
+                return true;
+            }else {
+
+                alert("la contraseña no coincide");
+                intentos++;    //si la contraseña no coincide se suma otro intento fallido
+
+                return false;
+            }
+
+           
+        }
+    
+        if(existeLogin(usuario) && passwordCorrecto(contrasenia)){
+
+        alert("el nombre de usuario y la contraseña son correctos");
+
+        }
+}
+    
+    </script>
+
+</body>
+</html>

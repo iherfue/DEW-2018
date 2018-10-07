@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+
+    <script>
+        // pedimos al usuario un numero
+        do{
+
+            var numero = prompt("Introduzca un numero del 1 al 100");
+
+        }while(numero < 0 || numero > 100 || numero == "");
+        
+
+        function esEntero(numero){   //comprobamos si el numero que introduce el usuario es un entero
+
+            if(numero % 1 == 0){
+
+                return true;
+
+            }
+
+            return false;
+            
+        }
+
+        function esPrimo(numero){   //comprobamos si el numero que introduce el usuario es primo
+            
+            for(var i = 2; i < numero; i++){
+
+                if(numero % i == 0){
+
+                    return false;
+
+                }
+            }
+
+            return true;
+
+        }
+        //llamamos a las dos funciones
+        console.log(esEntero(numero));
+        console.log(esPrimo(numero));
+        
+    </script>
+
+</body>
+</html>
