@@ -15,13 +15,9 @@
 
     }while(numero < 1 || numero > 100 || numero == "");
     
-    
-    
-
     var divisor = [2,3,5,10]; //creamos un array de los divisores
 
     function esDivisible(numero,divisor){ //la funcion toma como dos argumentos el numero introducido y el divisor del array
-
 
         for(var i = 0; i<= divisor.length;i++){ //creamos un for que recorra el array y mientras el numero / el divisor = 0 mostrara con quien
                                                     //es divisible, sumaremos +1 a la i para que siga recorriendo
@@ -37,13 +33,10 @@
                 
                 }
             }
-            i++;
-            
+            i++;        
      }       
     
-        
 console.log(esDivisible(numero,divisor));
-
 
     </script>
 </body>
