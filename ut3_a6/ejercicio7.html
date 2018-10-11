@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <script>
+        var users = [
+                    {name: 'Gregory Goyle', time: 56},
+                    {name: 'Nymphadora Tonks', time: 9},
+                    {name: 'Luna Lovegood', time: 45},
+                    {name: 'Cedric Diggory', time: 28},
+                    {name: 'Cho Chang', time: 0}
+                    ];
+
+        var resultado = users.reduce(function(anterior,actual){
+          
+        return anterior < actual.time;  
+        
+
+        },0);
+
+        console.log(resultado);
+    </script>
+</body>
+</html>

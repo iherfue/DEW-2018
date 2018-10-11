@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <script>
+        var times = [56, 9, 45, 28, 35];
+
+        var resultado = times.reduce(function(acc,numero){
+
+            return acc + numero / times.length;
+
+        },0);
+
+        console.log(resultado);
+    </script>
+</body>
+</html>
