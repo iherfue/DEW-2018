@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <script>
+       var alumnos = [
+           {nombre: 'Maria' , edad: 29, estudio: 'diseñadora'},
+           {nombre: 'Lucia' , edad: 31, estudio: 'ingeniera quimica'},
+           {nombre: 'Susana' , edad: 34, estudio: 'periodista'},
+           {nombre: 'Rocio' , edad: 25, estudio: 'actriz'},
+           {nombre: 'Inmaculada', edad: 21, estudio: 'diseñadora'}
+       ];
+    
+       var nombres = alumnos.map(function(array){
+
+              return array.nombre; 
+
+           });
+
+       function countALumnos(nombres){
+
+           
+           console.log(nombres);
+       }
+       
+
+    countALumnos(nombres);
+       
+    </script>
+</body>
+</html>

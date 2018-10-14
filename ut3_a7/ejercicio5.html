@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+   <script>
+       
+       var users = [
+                    {name: 'Nymphadora Tonks', time: 9},
+                    {name: 'Cedric Diggory', time: 28},
+                    {name: 'Cho Chang', time: 35},
+                    {name: 'Luna Lovegood', time: 45},
+                    {name: 'Gregory Goyle', time: 56}
+                    ];
+
+
+        const [a,b,c] = users; 
+        const [{time: tiempo1}] = users;
+        const [,{time: tiempo2}] = users;
+        const [,,{time: tiempo3}] = users;
+
+console.log(`La primera posicion es para ${a.name} con un tiempo de ${tiempo1},la segunda posicion es para ${b.name},con un tiempo de ${tiempo2}
+ y la tercera posicion es para ${c.name}, con un tiempo de ${tiempo3}`);
+   </script> 
+</body>
+</html>

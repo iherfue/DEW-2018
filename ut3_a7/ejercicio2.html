@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <script>
+        var pelicula1 = prompt(`Introduce tu primera pelicula favorita`);
+        var pelicula2 = prompt(`Introduce tu segunda pelicula favorita`);
+
+        var peliculas = [];
+
+        peliculas.push(pelicula1);
+        peliculas.push(pelicula2);
+        
+        for(var peli of peliculas){
+
+            console.log(`A mi tambien me encanto ${peli}!, tenemos mucho en comun humano`);
+        }
+    </script>
+</body>
+</html>
