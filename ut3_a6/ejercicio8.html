@@ -18,21 +18,23 @@
                     {name: 'Cho Chang', time: 0}
                     ];
 
-        var resultado = users.reduce(function(num1,num2){
+        var resultado = users.sort(function(num1,num2){
           
-        if(num1.time < num2.time){
+         var timeA = num1.time;
+         var timeB = num2.time;
 
-            return num1;
+            if(timeA > timeB){
+                 return 1;
+            }
 
-        }  else{
-
-            return num2;
-        }
+            if(timeA < timeB){
+                 return -1;
+            }
         
 
         },0);
 
-        console.log(resultado.name);
+        console.log(resultado);
     </script>
 </body>
 </html>
