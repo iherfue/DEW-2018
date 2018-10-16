@@ -19,7 +19,7 @@
                         {name: 'Inmaculada', isPremium: false, pin: 8998}
                     ];
 
-            var ordenar = users.sort(function(nombre,pines){
+           /* var ordenar = users.sort(function(nombre,pines){
                 
                     var nombreA = nombre.name;
                     var nombreB = pines.name;
@@ -31,7 +31,22 @@
                     if(nombreA > nombreB){
                         return 1;
                     }
+            })*/
+                //ORDENADOS POR PIN DE MAYOR A MENOR
+             var ordenar = users.sort(function(nombre,pines){
+                
+                    var nombreA = nombre.pin;
+                    var nombreB = pines.pin;
+
+                    if(nombreA > nombreB){
+                        return -1;
+                    }
+
+                    if(nombreA < nombreB){
+                        return 1;
+                    }
             })
+
 
             console.log(ordenar);
     </script>
