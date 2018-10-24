@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
     
 </head>
 <body>
@@ -18,20 +18,61 @@
            {nombre: 'Inmaculada', edad: 21, estudio: 'diseñadora'}
        ];
     
-       var nombres = alumnos.map(function(array){
 
-              return array.nombre; 
-
-           });
-
-       function countALumnos(nombres){
+       function countALumnos(alumno){
 
            
-           console.log(nombres);
+           return console.log(`Hay un total de ${alumno.length} alumnos`);
        }
+        
+    
+        function averageAge(alumno){
+            
+            var media = 0;
+            for(var i = 0; i <alumno.length; i++){
+                
+                media = media + alumno[i].edad;
+            }
+            
+            media = media / alumno.length;
+            return console.log(`La edad media de los alumnos es: ${media}`);
+        }   
+        
+        function theYoungest(alumno){
+            
+            var anios = 100;
+            for(var i = 0; i< alumno.length; i++){
+                
+                if(alumno[i].edad < anios ){
+                    
+                    anios = alumno[i].edad;
+                }
+            }
+            
+            return console.log(`La edad más joven es ${anios}`);
+        }
+        
+        function countDesigners(alumno){
+            
+            var contador = 0;
+            
+            for(var i = 0; i< alumno.length; i++){
+                
+                if(alumno[i].estudio == "diseñadora"){
+                    
+                    contador ++;
+                }
+            }
+            return console.log(`Hay ${contador} diseñadoras`);
+        }
+        console.log(alumnos);
+        $nuevo = {nombre: "Ivan", edad: 18, estudio: "informatico"};
+        alumnos.push($nuevo,)
+        countALumnos(alumnos);
+        averageAge(alumnos);
+        theYoungest(alumnos);
+        countDesigners(alumnos);
        
-
-    countALumnos(nombres);
        
     </script>
 </body>
