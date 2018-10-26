@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="css/estilos.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <script>
+        
+        var fecha = new Date();
+        var mes = fecha.getMonth()+1;
+        
+
+        
+        function nombreMes(indice){
+            var nombreMonth;
+
+            switch (indice){ //Swicth con los meses segun la respuesta de getMonth el nombre del mes sera igual al mes
+
+                case 1:
+                    nombreMonth = "Enero";
+                    break;
+
+                case 2:
+                    nombreMonth = "Febrero";
+                    break;
+                
+                case 3:
+                    nombreMonth = "Marzo";
+                    break;
+                
+                case 4:
+                    nombreMonth = "Abril";
+                    break;
+
+                case 5:
+                    nombreMonth = "Mayo";
+                    break;
+
+                case 6:
+                    nombreMonth = "Junio";
+                    break;
+
+                case 7:
+                    nombreMonth = "Julio";
+                    break;
+
+                case 8:
+                    nombreMonth = "Agosto";
+                    break;
+
+                case 9:
+                    nombreMonth = "Septiembre";
+                    break;
+
+                case 10:
+                    nombreMonth = "Octubre";
+                    break;
+
+                case 11:
+                    nombreMonth = "Noviembre";
+                    break;
+
+                case 12:
+                    nombreMonth = "Diciembre";
+                    break;
+            }
+            return nombreMonth;
+        }
+
+        function muestraCalendario(){
+
+            var dia = fecha.getUTCDate();
+            var anio = fecha.getFullYear();
+
+            document.write(`<div id ="calendario">
+                                <span id="anio"> ${anio}</span><br/>
+                                <span id="dia"> ${dia}</span>
+                                <span id="mes"> ${nombreMes(mes)}</span> 
+                            </div>`);
+
+        }
+
+        muestraCalendario();
+
+    </script>
+
+</body>
+</html>

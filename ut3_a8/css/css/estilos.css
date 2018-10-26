@@ -1,0 +1,19 @@
+
+@font-face{
+	font-family:DigitalDream;
+	src:url(fonts/DIGITALDREAM.ttf);
+}
+
+body{
+	font-family:DigitalDream;
+	font-size:2em;
+}
+
+#reloj{
+	margin:15px;
+	padding:15px;
+	border:5px solid #009900;
+	background-color:#99FF33;
+	float:left;
+	border-radius: 10px;
+}

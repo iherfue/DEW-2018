@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/css/estilos.css" type="text/css" rel="stylesheet">
+    
+</head>
+<body>
+    <script>
+        function formateaHora(){
+            tiempo = new Date();
+            h = tiempo.getHours();
+            m = tiempo.getMinutes();
+            s = tiempo.getSeconds();
+
+            if(h < 10){
+                h = '0' + h;
+            }else if(m < 10 ){
+                m = '0' + m;
+            }else if(s < 10) {
+                s = '0' + s;
+            }
+                
+            var reloj;
+
+            reloj = document.getElementById("reloj").innerHTML = `${h}:${m}:${s}`; //obtenemos el div con id reloj y añadimos al elemento el reloj
+
+            return reloj;
+
+        }
+        
+        function actualizaReloj(){
+
+            setInterval(formateaHora,1000);
+        }
+
+        actualizaReloj();
+            
+    </script>
+    <div id="reloj">
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var min = 1;
+        var max = 50;
+
+       function generaAleatorio(min,max){ //generamos un aleatorio entre los parámetros que le entran
+
+           var numero = Math.floor((Math.random() * max)+min);
+
+           return numero;
+       }
+
+
+       function generaNaletarios(n,min,max){ //generamos un array de N numeros que haya salido en la anterior funcion y haciendo un random segun un rango (min,max)
+           var numeros = [];
+
+            for(var i = 0; i < n; i++){
+               var nuevoNumero =  Math.floor((Math.random() * (max - min))+min); //genera el nuevo numero
+                numeros.push(nuevoNumero); //añadimos el numero al array
+            }
+            console.log(numeros);
+           return numeros;
+       }
+       
+
+        function cuentaFrecuencias(arr) {
+        
+         array = arr.reduce((prev, curr) => (prev[curr] = ++prev[curr] || 1, prev), {}) //obtenemos las veces que se repite ese numero en el array
+        
+            return array;
+        }
+        
+        function maximaFrecuencia(number){
+
+            console.log(number);
+            
+        }
+        
+        
+       maximaFrecuencia(cuentaFrecuencias(generaNaletarios(generaAleatorio(min,max),500,1000)));
+      // console.log(count(generaNaletarios()));
+       
+
+       
+    </script>
+</body>
+</html>

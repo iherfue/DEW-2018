@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function esPalindromo(cadena){
+
+            var l = cadena.length;
+            var i = 0;
+            while(i != l -i -1){
+
+                var a = cadena.charAt(i);
+                var b = cadena.charAt(l -i -1);
+
+                if(a != b){
+
+                    return false;
+                }
+                i++;
+            }
+            
+            return true;
+        }
+
+        
+    do{
+        var cadena = prompt("introduce algo").toLowerCase().replace(/\s/g,"");
+        if(esPalindromo(cadena)){
+
+            console.log("Es palindromo");
+        }
+        if(!esPalindromo(cadena)) {
+
+            console.log("No es palindromo");
+        }
+        
+    }while(cadena != "fin");
+    </script>
+</body>
+</html>

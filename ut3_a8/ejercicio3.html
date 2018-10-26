@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        
+        var url = [
+                    "https://www.google.es",
+                    "https://moodle.cifpmajadamarcial.com",
+                    "http://51.254.116.159:8080/",
+                    "http://51.254.116.159/cesar/video/video.html",
+                    "http://51.254.116.159/dsw",
+                    "http://marca.com",
+                    "https://github.com/",
+                    "https://elpais.com/",
+                    "http://web.mit.edu/6.813/www/sp17/programming-labs/lab1-html-css/",
+                    "https://yahoo.com"
+            ];
+            
+        function cambiaURL(url){
+
+         random = Math.floor(Math.random()*url.length);
+
+         window.location.href=url[random];
+           
+        }
+        //Para poder pasar un parámetro a la funcion cambiaUrl en un setTimeout lo hariamos de la siguiente forma
+        setTimeout(function () {cambiaURL(url);}, 10000);
+        
+
+
+    </script>
+</body>
+</html>
