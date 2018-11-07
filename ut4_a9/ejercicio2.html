@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        function Jugador(nombre,numeroVidas,tienePistola,tieneGranada,numeroBalas){
+
+            this._nombre = nombre;
+            this._numeroVidas = numeroVidas;
+            this._tienePistola = tienePistola;
+            this._tieneGranada = tieneGranada;
+            this._nuemeroBalas = numeroBalas;
+
+            if(tienePistola == "No"){
+
+                this._nuemeroBalas = 0;
+            }
+
+            //metodos
+            this.setPropiedad = setPropiedad;
+            this.getPropiedad = getPropiedad;
+            this.toString = toString;
+        }
+
+             function getPropiedad(){
+
+                return this._nombre;
+                return this._numeroVidas;
+                return this._tienePistola;
+                return this._tieneGranada;
+                return this._nuemeroBalas;
+            }
+
+            function setPropiedad(tipo){
+
+                this._tipo = tipo;
+                
+            }
+
+           function toString(){
+
+             console.log(`El jugador ${this._nombre} tiene ${this._numeroVidas} vidas, ${this._tienePistola} tiene pistola con ${this._nuemeroBalas} balas y ${this._tieneGranada} tiene granada`);
+                
+           }
+            
+        var ivan = new Jugador("Ivan","3","Si","No","5");
+        console.log(ivan.getPropiedad());
+        console.log(ivan.setPropiedad());
+        ivan.toString();
+        
+
+        var andres = new Jugador("Andres","7","No","Si");
+        console.log(andres.getPropiedad());
+        console.log(andres.setPropiedad());
+        andres.toString();
+
+        function Partida(){
+
+            this._jugadores = ["Ivan","Andres","Joaquin","pepe","perico","denis","omayra","tony"];
+            this._numeroVidas = 3;
+
+            this.imprime = imprime;
+            this.ruletaRusa = ruletaRusa;
+        }
+
+        function imprime(){
+
+            for(var i = 0; i < this._jugadores.length; i++){
+
+                console.log(this._jugadores[i] + " vidas: "+ this._numeroVidas);
+            }
+        }
+
+        function ruletaRusa(){
+
+            var numeroJugadores = this._jugadores.length
+            var posicion = Math.floor((Math.random() * numeroJugadores));
+            console.log(this._jugadores[posicion]);
+            
+            if(this._jugadores[posicion] == "Ivan"){
+
+                this._numeroVidas = 0;
+            }
+        }
+    
+        var partida = new Partida();
+        partida.imprime();
+        partida.ruletaRusa();
+        partida.imprime();
+
+
+    </script>
+</body>
+</html>

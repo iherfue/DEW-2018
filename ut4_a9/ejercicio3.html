@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function Usuario(nombre,apellidos,dni,aNacimiento,Provincia){
+
+            this._nombre = nombre;
+            this._apellidos = apellidos;
+            this._dni = dni;
+            this._aNacimiento = aNacimiento;
+            this._Provincia = Provincia;
+
+        }
+
+        Usuario.prototype.setPropiedad = function(tipo){
+
+
+        }
+
+        Usuario.prototype.getPropiedad = function(){
+
+            return this._nombre;
+            return this._apellidos;
+            return this._dni;
+            return this._aNacimiento;
+            return this._Provincia;
+        }
+        
+        Usuario.prototype.generaLogin = function(){
+
+            var login = (`${this._nombre.charAt(0)}${this._apellidos.charAt(0)}${this._aNacimiento.charAt(this._aNacimiento.length -1)}${this._aNacimiento.charAt(this._aNacimiento.length -2)}`);
+
+            return login;
+        }
+
+        Usuario.prototype.getEdad = function(){
+
+            var dia = new Date();
+            var nacimiento = this._aNacimiento;
+            var edad = dia.getFullYear() - nacimiento;
+            
+            return edad;
+        }
+
+        Usuario.prototype.toString = function(){
+
+            return console.log(`${this._nombre} ${this._apellidos} ${this._dni} ${this._aNacimiento} ${this._Provincia}`);
+
+        }
+
+        Usuario.prototype.toHTML = function(){
+
+            document.write(`
+            
+                    <ul>
+                        <li>${this._nombre}</li>
+                        <li>${this._apellidos}</li>
+                        <li>${this._dni}</li>
+                        <li>${this._aNacimiento}</li>
+                        <li>${this._Provincia}</li>
+                    </ul>
+            `);
+        }
+
+        Usuario.prototype.muestraLogin = function(login,edad){
+
+            document.write(`Tu dni es ${this._dni} tu login es ${login} y tu edad es ${edad}`);
+        }
+
+        var ivan = new Usuario("Ivan","Hernandez Fuentes","78597168G","1999","Las Palmas");
+        ivan.getPropiedad();
+        console.log(ivan.generaLogin());
+        ivan.getEdad();
+        ivan.toString();
+        ivan.toHTML();
+        ivan.muestraLogin(ivan.generaLogin(),ivan.getEdad());
+
+        var andres = new Usuario("Andres","Rodriguez Muñoz","78514312T","1997","Las Palmas");
+        andres.getPropiedad();
+        andres.generaLogin();
+        andres.getEdad();
+        andres.toString();
+        andres.toHTML();
+        andres.muestraLogin(andres.generaLogin(),andres.getEdad());
+    </script>
+</body>
+</html>
