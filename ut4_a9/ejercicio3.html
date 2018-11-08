@@ -17,22 +17,70 @@
             this._aNacimiento = aNacimiento;
             this._Provincia = Provincia;
 
+            this.getNombre = getNombre;
+            this.getNombre = setNombre;
+            this.getApellidos = getApellidos;
+            this.setApellidos = setApellidos;
+            this.getDni = getDni;
+            this.setDni = setDni,
+            this.getAnacimiento = getAnacimiento;
+            this.setAnacimiento = setAnacimiento;
+            this.getProvincia = getProvincia;
+            this.setProvincia = setProvincia;
+
         }
 
-        Usuario.prototype.setPropiedad = function(tipo){
-
-
-        }
-
-        Usuario.prototype.getPropiedad = function(){
+        function getNombre(){
 
             return this._nombre;
-            return this._apellidos;
-            return this._dni;
-            return this._aNacimiento;
-            return this._Provincia;
         }
         
+        function setNombre(nombre){
+
+            return this._nombre = nombre;
+        }
+
+        function getApellidos(){
+
+            return this._apellidos;
+        }
+
+        function setApellidos(apellidos){
+
+            return this._apellidos = apellidos;
+        }
+
+        function getDni(){
+
+            return this._dni;
+        }
+
+        function setDni(dni){
+
+            return this._dni = dni;
+        }
+
+        function getAnacimiento(){
+
+            return this._aNacimiento;
+        }
+
+        function setAnacimiento(nacimiento){
+
+            return this._aNacimiento = nacimiento;
+        }
+
+        function getProvincia(){
+
+            return this._Provincia;
+        }
+       
+        function setProvincia(provincia){
+
+            return this.Provincia = provincia;
+        }
+
+        //los metodos se añaden al prototipo comun para todas las clases
         Usuario.prototype.generaLogin = function(){
 
             var login = (`${this._nombre.charAt(0)}${this._apellidos.charAt(0)}${this._aNacimiento.charAt(this._aNacimiento.length -1)}${this._aNacimiento.charAt(this._aNacimiento.length -2)}`);
@@ -75,20 +123,33 @@
         }
 
         var ivan = new Usuario("Ivan","Hernandez Fuentes","78597168G","1999","Las Palmas");
-        ivan.getPropiedad();
-        console.log(ivan.generaLogin());
+        ivan.generaLogin();
         ivan.getEdad();
         ivan.toString();
         ivan.toHTML();
         ivan.muestraLogin(ivan.generaLogin(),ivan.getEdad());
 
         var andres = new Usuario("Andres","Rodriguez Muñoz","78514312T","1997","Las Palmas");
-        andres.getPropiedad();
         andres.generaLogin();
         andres.getEdad();
         andres.toString();
         andres.toHTML();
         andres.muestraLogin(andres.generaLogin(),andres.getEdad());
+
+        var joaquin = new Usuario("Joaquin","del toro","76541678F","1998","Las Palmas");
+        joaquin.generaLogin();
+        joaquin.getEdad();
+        joaquin.toString();
+        joaquin.toHTML();
+        joaquin.muestraLogin(joaquin.generaLogin(),joaquin.getEdad());
+
+        var tony = new Usuario("Tony","Perez davila","765167761H","1980","Las Palmas");
+        tony.generaLogin();
+        tony.getEdad();
+        tony.toString();
+        tony.toHTML();
+        tony.muestraLogin(tony.generaLogin(),tony.getEdad());
+
     </script>
 </body>
 </html>

@@ -16,65 +16,111 @@
             this._numeroVidas = numeroVidas;
             this._tienePistola = tienePistola;
             this._tieneGranada = tieneGranada;
-            this._nuemeroBalas = numeroBalas;
+            this._numeroBalas = numeroBalas;
 
             if(tienePistola == "No"){
 
-                this._nuemeroBalas = 0;
+                this._numeroBalas = 0;
             }
 
-            //metodos
-            this.setPropiedad = setPropiedad;
-            this.getPropiedad = getPropiedad;
+            //getter y setters
+            this.getNombre = getNombre;
+            this.setNombre = setNombre;
+            this.getVidas = getVidas;
+            this.setVidas = setVidas;
+            this.getPistola = getPistola;
+            this.setPistola = setPistola;
+            this.getGranada = getGranada;
+            this.setGranada = getGranada;
+            this.getBalas = getBalas;
+            this.setBalas = setBalas;
+
             this.toString = toString;
         }
 
-             function getPropiedad(){
+            function getNombre(){
 
                 return this._nombre;
-                return this._numeroVidas;
-                return this._tienePistola;
-                return this._tieneGranada;
-                return this._nuemeroBalas;
             }
 
-            function setPropiedad(tipo){
+            function setNombre(nombre){
 
-                this._tipo = tipo;
-                
+                return this._nombre = nombre;
+            }
+
+            function getVidas(){
+
+                return this._numeroVidas;
+            }
+
+            function setVidas(vidas){
+
+                return this._numeroVidas = vidas;
+            }
+
+            function getPistola(){
+
+                return this._tienePistola;
+            }
+
+            function setPistola(pistola){
+
+                return this._tienePistola = pistola;
+            }
+
+            function getGranada(){
+
+                return this._tieneGranada;
+            }
+
+            function setGranada(granada){
+
+                return this._tieneGranada = granada;
+            }
+            
+            function getBalas(){
+
+                return this._numeroBalas;
+            }
+
+            function setBalas(balas){
+
+                return this._numeroBalas = balas;
             }
 
            function toString(){
 
-             console.log(`El jugador ${this._nombre} tiene ${this._numeroVidas} vidas, ${this._tienePistola} tiene pistola con ${this._nuemeroBalas} balas y ${this._tieneGranada} tiene granada`);
+             console.log(`El jugador ${this._nombre} tiene ${this._numeroVidas} vidas, ${this._tienePistola} tiene pistola con ${this._numeroBalas} balas y ${this._tieneGranada} tiene granada`);
                 
            }
             
         var ivan = new Jugador("Ivan","3","Si","No","5");
-        console.log(ivan.getPropiedad());
-        console.log(ivan.setPropiedad());
+
         ivan.toString();
         
 
         var andres = new Jugador("Andres","7","No","Si");
-        console.log(andres.getPropiedad());
-        console.log(andres.setPropiedad());
+        
         andres.toString();
 
+
+        //CLASE PARTIDA
         function Partida(){
 
             this._jugadores = ["Ivan","Andres","Joaquin","pepe","perico","denis","omayra","tony"];
-            this._numeroVidas = 3;
+      //    this._numeroVidas = 3;
 
             this.imprime = imprime;
             this.ruletaRusa = ruletaRusa;
         }
+        
+       
 
         function imprime(){
 
             for(var i = 0; i < this._jugadores.length; i++){
 
-                console.log(this._jugadores[i] + " vidas: "+ this._numeroVidas);
+                console.log(this._jugadores[i] + " vidas: "+ ivan._numeroVidas);
             }
         }
 
@@ -84,10 +130,9 @@
             var posicion = Math.floor((Math.random() * numeroJugadores));
             console.log(this._jugadores[posicion]);
             
-            if(this._jugadores[posicion] == "Ivan"){
+            this._jugadores[posicion]._numeroVidas = 0;
 
-                this._numeroVidas = 0;
-            }
+              
         }
     
         var partida = new Partida();

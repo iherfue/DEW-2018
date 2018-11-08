@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,6 +13,7 @@
         var equipos = new Array(" ", "Fc barcelona", "Espanyol", "Sevilla", "Atlético", "Alaves", "Real Madrid",
             "Levante", "Getafe", "Valladolid", "Girona", "Celta", "Eibar", "R. Sociedad", "Betis", "Alaves",
             "Valencia", "Villarreal", "Athletic.B", "Leganés", "Rayo", "Huesca");
+
         var quinielas = [equipos.length - 1];
 
         function crearTabla(quinielas, equipos) {
@@ -51,17 +52,21 @@
         function generaResultados(quinielas, equipos) {
 
             for (let i in equipos) {
+
                 if (i != 0) {
 
                     for (let j in equipos) {
 
                         if (j != 0) {
+
                             quinielas[i][j] = generaSimbolo();
 
-                            if (j != i) {
+                            if (j != i) { //si el equipo es distinto de si  mismo genera simbolo
 
                                 quinielas[i][j] = generaSimbolo();
-                            } else {
+
+                            } else {    //en otro caso seria el equipo contra si mismo por ello simbolo '-'
+
                                 quinielas[i][j] = "-";
                             }
 
@@ -76,7 +81,7 @@
 
         crearTabla(quinielas, equipos);
 
-        console.log(generaSimbolo());
+       // console.log(generaSimbolo());
 
         generaResultados(quinielas, equipos);
 
