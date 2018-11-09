@@ -103,11 +103,15 @@
         
         andres.toString();
 
+        var joaquin = new Jugador("Joaquin","2","Si","Si");
+        
+        joaquin.toString();
 
+        
         //CLASE PARTIDA
         function Partida(){
 
-            this._jugadores = ["Ivan","Andres","Joaquin","pepe","perico","denis","omayra","tony"];
+            this._jugadores = [ivan,andres,joaquin]; //metemos en el array el objeto y asi poder entrar en las propiedades
       //    this._numeroVidas = 3;
 
             this.imprime = imprime;
@@ -120,19 +124,18 @@
 
             for(var i = 0; i < this._jugadores.length; i++){
 
-                console.log(this._jugadores[i] + " vidas: "+ ivan._numeroVidas);
+                console.log(this._jugadores[i]._nombre + " tiene " + this._jugadores[i]._numeroVidas + " vidas");
             }
         }
 
         function ruletaRusa(){
 
-            var numeroJugadores = this._jugadores.length
+            var numeroJugadores = this._jugadores.length;
             var posicion = Math.floor((Math.random() * numeroJugadores));
-            console.log(this._jugadores[posicion]);
+         //   console.log(this._jugadores[0]._numeroVidas);
             
-            this._jugadores[posicion]._numeroVidas = 0;
-
-              
+            this._jugadores[posicion].setVidas(0);
+            console.log(`En la ruleta rusa salio ${this._jugadores[posicion]._nombre}`)
         }
     
         var partida = new Partida();
