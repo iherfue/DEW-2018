@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+        function Edificios(Calle,Numero,codigoPostal,plantasEdificio){
+
+            this.Calle = Calle;
+            this.Numero = Numero;
+            this.codigoPostal = codigoPostal;
+            this.plantasEdificio = plantasEdificio;
+
+        }
+
+        //getters y setter 
+
+        this.getCalle = this.getCalle;
+        this.setCalle = this.setCalle;
+        this.getNumero = this.getNumero;
+        this.setNumero = this.setNumero;
+        this.getCodigoPostal = this.getCodigoPostal;
+        this.setCodigoPostal = this.setCodigoPostal;
+        
+
+        Edificios.prototype.muestraInfo = function(){
+
+            console.log(`Construido nuevo edificio en calle: ${this.Calle}, nº: ${this.Numero}, CP: ${this.codigoPostal}.`)
+        }
+
+        Edificios.prototype.agregaPlantasYPuertas = function(nPlantas,nPuertas){
+            
+            oldPuertas = this.plantasEdificio[1].length;
+            console.log("El edificio antes tenia " + oldPuertas + " puertas");
+            nuevasPuertas = nPuertas + oldPuertas;
+            console.log(`Las nuevas puertas son ${nuevasPuertas} se añadieron ${nPuertas} nuevas`);
+            oldPlantas = this.plantasEdificio; //guardamos en una variable las antiguas plantas (para no perderla)
+
+           this.plantasEdificio =  [nPlantas,new Array(nPuertas)];
+           var plantas = this.plantasEdificio[0];
+
+     
+           //console.log("Plantas " + plantas);
+           
+           this.plantasEdificio = this.plantasEdificio[0] + oldPlantas[0];
+            
+            //puertas totales que hay por cada planta
+           totalPuertas =   nuevasPuertas * this.plantasEdificio;
+
+         //  console.log("estas son las plantas " + this.plantasEdificio);
+     //      console.table(n);
+            
+        }
+
+        Edificios.prototype.getNumero = function(){
+
+            return this.Numero;
+        }
+
+        Edificios.prototype.setNumero = function(numero){
+
+            return this.Numero = numero;
+        }
+
+        Edificios.prototype.getCalle = function(){
+
+            return this.Calle;
+        }
+
+        Edificios.prototype.setCalle = function(nombre){
+
+           return this.Calle = nombre;
+        }
+        
+        Edificios.prototype.getCodigoPostal = function(){
+
+            return this.codigoPostal;
+        }
+
+        Edificios.prototype.setCodigoPostal = function(codigo){
+
+            this.codigoPostal = codigo;
+        }
+
+
+        //MODIFICACIONES
+
+        Edificios.prototype.modificaNumero = function(numero){
+
+            this.setNumero(numero);
+        }
+
+        Edificios.prototype.modificaCalle = function(nombre){
+
+            this.setCalle(nombre);
+        }
+
+        Edificios.prototype.modificaCP = function(codigo){
+
+            this.setCodigoPostal(codigo);
+        }
+
+        Edificios.prototype.agregaPropietarios = function(nombre,planta,puerta){
+
+            console.log( `${nombre} es propietario de la planta ${planta} con puerta ${puerta}`);
+        }
+
+        Edificios.prototype.imprimePlantas = function(){
+
+            console.log(`El edificio tiene ${this.plantasEdificio} plantas cada planta tiene ${nuevasPuertas} puertas,en total hay ${totalPuertas} puertas`); 
+                       
+            
+        }
+  
+  
+
+        edificio1 = new Edificios("Pepito","5","35600",new Array(2 , new Array(2))); //El primer array son las plantas y el segundo array son las puertas
+        edificio1.muestraInfo();                                                       // a mi entender las plantas es un array que dentro tiene otro array que son las puertas
+        edificio1.agregaPlantasYPuertas(6,11); //primer valor plantas segundo puertas 
+        edificio1.agregaPropietarios("ivan",2,1);
+        edificio1.imprimePlantas();
+
+        console.log("MODIFICAMOS LOS VALORES AL EDIFICIO");
+        edificio1.modificaCalle("Calle Galicia");
+        edificio1.modificaNumero("4");
+        edificio1.modificaCP("35500");
+        edificio1.muestraInfo();
+        
+
+        //EDIFICIO 2
+        console.log("Edificio 2");
+        edificio2 = new Edificios("Velazquez","10","35600",new Array(30, new Array(10)));
+        edificio2.muestraInfo();
+        edificio2.agregaPlantasYPuertas(10,2);
+        edificio2.imprimePlantas();
+        
+    </script>
+
+</body>
+</html>

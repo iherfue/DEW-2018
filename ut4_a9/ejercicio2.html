@@ -8,8 +8,16 @@
 </head>
 <body>
     <script>
-        
 
+        /**
+         * [Jugador es una clase se utiliza funcion constructora]
+         * @param       {[string]} nombre       [nombre jugador]
+         * @param       {[int]} numeroVidas  [el numero de vidas]
+         * @param       {[boolean]} tienePistola [description]
+         * @param       {[type]} tieneGranada [description]
+         * @param       {[int]} numeroBalas  [description]
+         * @constructor
+         */
         function Jugador(nombre,numeroVidas,tienePistola,tieneGranada,numeroBalas){
 
             this._nombre = nombre;
@@ -77,7 +85,7 @@
 
                 return this._tieneGranada = granada;
             }
-            
+
             function getBalas(){
 
                 return this._numeroBalas;
@@ -91,34 +99,38 @@
            function toString(){
 
              console.log(`El jugador ${this._nombre} tiene ${this._numeroVidas} vidas, ${this._tienePistola} tiene pistola con ${this._numeroBalas} balas y ${this._tieneGranada} tiene granada`);
-                
+
            }
-            
+
+           //instancias
         var ivan = new Jugador("Ivan","3","Si","No","5");
 
         ivan.toString();
-        
+
 
         var andres = new Jugador("Andres","7","No","Si");
-        
+
         andres.toString();
 
-        var joaquin = new Jugador("Joaquin","2","Si","Si");
-        
+        var joaquin = new Jugador("Joaquin","2","Si","Si","20");
+
         joaquin.toString();
 
-        
+
         //CLASE PARTIDA
         function Partida(){
 
+          /**
+           * [_jugadores array con instancias de Jugador]
+           * @type {Array}
+           */
             this._jugadores = [ivan,andres,joaquin]; //metemos en el array el objeto y asi poder entrar en las propiedades
-      //    this._numeroVidas = 3;
 
             this.imprime = imprime;
             this.ruletaRusa = ruletaRusa;
         }
-        
-       
+
+
 
         function imprime(){
 
@@ -133,11 +145,11 @@
             var numeroJugadores = this._jugadores.length;
             var posicion = Math.floor((Math.random() * numeroJugadores));
          //   console.log(this._jugadores[0]._numeroVidas);
-            
-            this._jugadores[posicion].setVidas(0);
+
+            this._jugadores[posicion].setVidas(0);//Se accede a la posición del array this_jugadores , donde accedemos a la propiedad numerovidas
             console.log(`En la ruleta rusa salio ${this._jugadores[posicion]._nombre}`)
         }
-    
+
         var partida = new Partida();
         partida.imprime();
         partida.ruletaRusa();

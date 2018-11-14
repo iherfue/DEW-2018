@@ -8,7 +8,15 @@
 </head>
 <body>
     <script>
-        
+        /**
+         * [Usuario es una clase usando prototype la clase toma como parámetros]
+         * @param       {[string]} nombre      [nombre del usuario]
+         * @param       {[string]} apellidos   [apellidos del usuario]
+         * @param       {[string]} dni         [dni del usuario]
+         * @param       {[int]} aNacimiento [año de nacimiento]
+         * @param       {[string]} Provincia   [provincia]
+         * @constructor
+         */
         function Usuario(nombre,apellidos,dni,aNacimiento,Provincia){
 
             this._nombre = nombre;
@@ -34,7 +42,7 @@
 
             return this._nombre;
         }
-        
+
         function setNombre(nombre){
 
             return this._nombre = nombre;
@@ -74,16 +82,18 @@
 
             return this._Provincia;
         }
-       
+
         function setProvincia(provincia){
 
             return this.Provincia = provincia;
         }
 
+
         //los metodos se añaden al prototipo comun para todas las clases
+
         Usuario.prototype.generaLogin = function(){
 
-            var login = (`${this._nombre.charAt(0)}${this._apellidos.charAt(0)}${this._aNacimiento.charAt(this._aNacimiento.length -1)}${this._aNacimiento.charAt(this._aNacimiento.length -2)}`);
+            var login = (`${this._nombre.charAt(0)}${this._apellidos.charAt(0)}${this._aNacimiento.charAt(this._aNacimiento.length -2)}${this._aNacimiento.charAt(this._aNacimiento.length -1)}`);
 
             return login;
         }
@@ -93,7 +103,7 @@
             var dia = new Date();
             var nacimiento = this._aNacimiento;
             var edad = dia.getFullYear() - nacimiento;
-            
+
             return edad;
         }
 
@@ -106,7 +116,7 @@
         Usuario.prototype.toHTML = function(){
 
             document.write(`
-            
+
                     <ul>
                         <li>${this._nombre}</li>
                         <li>${this._apellidos}</li>
@@ -114,7 +124,9 @@
                         <li>${this._aNacimiento}</li>
                         <li>${this._Provincia}</li>
                     </ul>
-            `);
+            `
+            
+            );
         }
 
         Usuario.prototype.muestraLogin = function(login,edad){
@@ -122,6 +134,7 @@
             document.write(`Tu dni es ${this._dni} tu login es ${login} y tu edad es ${edad}`);
         }
 
+        //instancias
         var ivan = new Usuario("Ivan","Hernandez Fuentes","78597168G","1999","Las Palmas");
         ivan.generaLogin();
         ivan.getEdad();
@@ -151,5 +164,6 @@
         tony.muestraLogin(tony.generaLogin(),tony.getEdad());
 
     </script>
+    
 </body>
 </html>

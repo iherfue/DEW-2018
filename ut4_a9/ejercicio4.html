@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    
+        function Instituto(codigoInstituto,nombre,grupos){
+
+            this.codigoInstituto = codigoInstituto;
+            this.nombre = nombre;
+            this.grupos = grupos; //Grupos sera un array de objetos
+
+        }
+        //getter y setters
+
+        this.getCodigoInstituto = this.getCodigoInstituto;
+        this.setCodigoInstituto = this.setCodigoInstituto;
+        this.getNombre = this.getNombre;
+        this.setGrupos = this.setGrupos;
+
+        Instituto.prototype.getCodigoInstituto = function(){
+
+            return this.getCodigoInstituto;
+        }
+
+        
+
+        Instituto.prototype.conocerCodigo = function(codigo){
+
+            this.codigoInstituto = codigo;
+            console.log(`El codigo del instituto es ${codigo}`);
+        }
+
+        Instituto.prototype.conocerAlumnos = function(grupos){
+
+            this.grupos = grupos;
+            console.log(`El centro ${this.nombre} tiene un total de ${grupos[0].numeroAlumnos} alumnos`);
+        }
+
+        Instituto.prototype.nuevoGrupo = function(codigo,nAlumnos){
+
+            var newAlumnos = this.grupos[0].numeroAlumnos;
+            console.log(newAlumnos);
+            var cantidadNueva = newAlumnos + nAlumnos;
+            //asignamos a grupos un nuevo array con los datos nuevos
+            this.grupos = new Array({codigo: codigo , numeroAlumnos: cantidadNueva});
+        }
+
+        var majada = new Instituto('001',"Majada marcial", new Array({codigo: '1' , numeroAlumnos: 100}));
+        majada.conocerCodigo(majada.codigoInstituto);
+        majada.conocerAlumnos(majada.grupos);
+        majada.nuevoGrupo('002',10); //SE LE AÑADEN 10 ALUMNOS
+        majada.conocerAlumnos(majada.grupos);
+
+        var iesPuerto = new Instituto('002',"Ies Puerto del Rosario", new Array(({codigo: '1' , numeroAlumnos: 1000})));
+        iesPuerto.conocerCodigo(iesPuerto.codigoInstituto);
+        iesPuerto.conocerAlumnos(iesPuerto.grupos);
+        iesPuerto.nuevoGrupo('005',2000);   //SE LE AÑADEN 2000 ALUMNOS
+        iesPuerto.conocerAlumnos(iesPuerto.grupos);
+    
+    </script>
+</body>
+</html>
