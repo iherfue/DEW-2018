@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        
+        function Palos(){
+
+            this.palo = new Array("Picas","Corazones","Treboles","Diamantes")
+        }
+
+        function Carta(palo){
+
+            Palos.call(this,palo);
+            this.nombreCarta = ["A","2","3","4","5","6","7","8","9","j","Q","K"];
+        }
+        
+        Carta.prototype.toString = function(){
+
+
+        }
+
+        function Baraja(){
+
+            this.cartas = new Array(Carta);
+        }
+
+        Baraja.prototype.generaCarta = function(){
+
+            var numeroJugadores = this._cartas.length;
+            var posicion = Math.floor((Math.random() * numeroJugadores));
+            console.log(posicion);
+        }
+
+        function Partida(){
+
+            this.baraja = Baraja;
+            this.mazo = new Array(Carta);
+            this.cartaVolteada = Carta;
+            this.aciertos = new Array();
+            this.numeroIntentos = this.numeroIntentos;
+        }
+        
+
+        Partida.prototype.Partida = function(filas,columnas){
+
+        //    console.log(filas);
+        }
+
+        Partida.prototype.Reparte = function(){
+
+            console.log(this.mazo);
+        }
+
+        jugador = new Partida();
+        jugador.Partida(4,4);
+        jugador.Reparte()
+        
+    </script>
+</body>
+</html>
