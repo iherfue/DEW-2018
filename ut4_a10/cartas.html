@@ -17,25 +17,38 @@
 
         function Carta(palo){
 
-            Palos.call(this,palo);
+            this.palo = palo;
             this.nombreCarta = ["A","2","3","4","5","6","7","8","9","j","Q","K"];
         }
         
         Carta.prototype.toString = function(){
 
-
+            console.log(`${this.nombreCarta[x]} de ${this.palo[y]}`);
         }
 
         function Baraja(){
 
-            this.cartas = new Array(Carta);
+            var p = new Palos();
+            var c = new Carta(p.palo);
+            //console.log(c.nombreCarta);
+            this.cartas = [];
+
+            for(var i = 0; i < c.palo.length;i++){
+
+                this.cartas[i] = [];
+
+                for(var j = 0; j < c.nombreCarta.length; j ++){
+
+                    this.cartas[i][j] = `${c.nombreCarta[j]} de ${c.palo[i]}`;
+                }
+            }
         }
 
         Baraja.prototype.generaCarta = function(){
 
-            var numeroJugadores = this._cartas.length;
-            var posicion = Math.floor((Math.random() * numeroJugadores));
-            console.log(posicion);
+            var x = Math.floor((Math.random() * this.cartas.length));
+    
+            console.log(this.cartas[x][x]);
         }
 
         function Partida(){
@@ -58,9 +71,10 @@
             console.log(this.mazo);
         }
 
-        jugador = new Partida();
-        jugador.Partida(4,4);
-        jugador.Reparte()
+    var baraja = new Baraja();
+        //jugador.Partida(4,4);
+        //jugador.Reparte()
+    baraja.generaCarta();
         
     </script>
 </body>
