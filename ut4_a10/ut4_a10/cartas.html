@@ -15,9 +15,11 @@
             this.palo = new Array("Picas","Corazones","Treboles","Diamantes")
         }
 
-        function Carta(palo){
+        function Carta(palo,n_carta){
 
             this.palo = palo;
+            this.n_carta = n_carta;
+            console.log(this.palo);
             this.nombreCarta = ["A","2","3","4","5","6","7","8","9","j","Q","K"];
         }
         
@@ -27,21 +29,22 @@
         }
 
         function Baraja(){
-
-            var p = new Palos();
-            var c = new Carta(p.palo);
-            //console.log(c.nombreCarta);
+            
             this.cartas = [];
-
-            for(var i = 0; i < c.palo.length;i++){
+            var palos = new Palos();
+            for(var i = 0; i < 3;i++){
 
                 this.cartas[i] = [];
+                //console.log(this.cartas[i]);
 
-                for(var j = 0; j < c.nombreCarta.length; j ++){
+                for(var j = 0; j < 12; j ++){
 
-                    this.cartas[i][j] = `${c.nombreCarta[j]} de ${c.palo[i]}`;
+                    this.cartas[i][j] = new Carta(palos.palo[i],j); //palo y nombrecarta
+                
                 }
             }
+
+            console.log(this.cartas);
         }
 
         Baraja.prototype.generaCarta = function(){
@@ -53,7 +56,7 @@
 
         function Partida(){
 
-            this.baraja = Baraja;
+            this.baraja = new Baraja;
             this.mazo = new Array(Carta);
             this.cartaVolteada = Carta;
             this.aciertos = new Array();
