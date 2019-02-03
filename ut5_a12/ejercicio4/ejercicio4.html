@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="pais_prueba.js"></script>
+    <script type="module" src="lista_paises_prueba.js"></script>
+    <title>Document</title>
+<style type="text/css">
+    .error{
+
+        background-color: red;
+    }
+</style>
+</head>
+<body>
+    <h2>Añadir un País</h2>
+
+    <form action="#" id="formulario">
+        <label for="codigo">Codigo del País</label>
+        <input type="text" id="codigo" maxlength="2" minlength="2" placeholder="ES"><br/>
+
+        <label for="codigo">Nombre del País</label>
+        <input type="text" id="nombre" placeholder="España"><br/>
+
+        <label for="codigo">Poblacion</label>
+        <input type="text" id="poblacion" placeholder="12300000"><br/>
+
+        <input type="button" id="enviar" value="Enviar">
+        
+        <input type="button" value="Guardar Paises" id="guardaPaises">
+        <input type="button" value="Ver Cookies" id="cookie">
+        <input type="button" value="Eliminar Pais" id="elimina">
+    </form>
+
+    <div class="error" id="error"></div>
+
+<script type="module" src="ejercicio4.js"></script>
+</body>
+</html>

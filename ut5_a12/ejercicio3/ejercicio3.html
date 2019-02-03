@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css.css" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario</h2>
+
+    <form id="formulario">
+
+        <label for="fecha">Fecha de Envío</label>
+        <input type="date" name="fecha" required id="fecha" /> <br/>
+
+        <label for="cp">CP Origen</label>
+        <input type="text" id="cp" name="cp" required maxlength="5" minlength="5"><br/>
+
+        <label for="cp_destino" name="cp_destino">CP Destino</label>
+        <input type="text" id="cp_destino" name="cp_destino" required maxlength="5" minlength="5"><br>
+        
+        <label for="repartidor" name="repartidor">Repartidor</label>
+        <input type="text" id="repartidor" name="repartidor"><br>
+
+        <label for="peso_paquete" id="peso_paquete" name="peso_paquete">Peso Paquete</label>
+        <input type="number" name="peso" id="peso"><br>
+
+        <label for="dimensiones">Dimensiones</label>
+        <input type="number" name="ancho" placeholder="ancho" id="ancho">
+        <input type="number" name="alto" placeholder="alto" id="alto">
+        <input type="number" name="largo" placeholder="largo" id="largo"><br>
+
+        <label for="peso_volumetrico">Peso Volumétrico</label>
+        <input type="number" id="volumetrico" readonly><br>
+
+        <label for="tarjeta">Tarjeta Bancaria</label>
+        <input type="text" id="tarjeta" maxlength="16"><br>
+
+        <label for="codigo_descuento">Código de descuento</label>
+        <input type="text" id="codigo" maxlength="7" placeholder="ABCDE12">
+
+        <br/>
+        <input type="checkbox" id="condiciones">Acepto las condiciones de servicio<br/>
+
+        <input type="submit" value="Enviar" id="enviar" style="display: none">
+
+        <div id="error" class="error"></div>
+        <div id="correcto" class="correcto"></div>
+    </form>
+    <script src="ejercicio3.js"></script>
+</body>
+</html>

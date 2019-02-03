@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+		<title>Ejemplo de formulario</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="style/formulario.css" />
+		<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>	
+	</head>
+
+	<body>
+		<h3>Adivina la palabra oculta</h3>
+		
+		<form id="formulario" action="#" method="get">
+
+			<div class="">
+				<input type="radio" name="letra" id="cuatro_letras">4 Letras
+				<input type="radio" name="letra" id="seis_letras">6 Letras
+				<input type="radio" name="letra" id="ocho_letras">8 Letras
+			</div>
+			<div class="linea_formulario">
+				<label for="nombre">Letras</label>
+				<input type="text" name="nombre" id="nombre"  value="" />
+
+				<div class="limpia"> </div>
+			</div>  
+		
+			<div class="linea_formulario">
+				<label for="apellidos" >Palabra</label>
+				<input type="text" name="apellidos" id="palabra" />
+							
+				<div class="limpia"> </div>
+			</div> 
+		
+				
+		<div class="linea_formulario">	
+			<input type="button" name="enviar" id="palabraNew" value="Nueva palabra" disabled  /> 
+			<input type="button" name="enviar" id="solucion" value="Ver solución"    /> 
+			<input type="button" name="enviar" id="enviar" value="Finalizar juego"  /> 
+			<div class="limpia"> </div>
+		</div>
+
+		<div class="linea_formulario error" id="linea_formulario error">
+			Porcentaje de aciertos: 50%
+		</div>
+		<div id="acierta-falla">
+				
+		</div>
+		
+	</form>
+	
+	<script>
+			
+		/*	function shuffle(arra1) {
+    			var ctr = arra1.length, temp, index;
+				// While there are elements in the array
+    			while (ctr > 0) {
+				// Pick a random index
+        			index = Math.floor(Math.random() * ctr);
+				// Decrease ctr by 1
+        		ctr--;
+				// And swap the last element with it
+        			temp = arra1[ctr];
+        			arra1[ctr] = arra1[index];
+        			arra1[index] = temp;
+    			}
+
+    			return arra1;
+			}*/
+
+		/*	function generaPalabra(){
+
+				var palabras = new Array("SANTANDER","BILBAO","SERVIDOR","SANTANDER","FUERTEVENTURA","LAREDO");
+			 	random = palabras[Math.floor(Math.random() * palabras.length)];
+
+				var res = random.split(""); //Divide el string en un array
+
+				console.log(random);
+				var palabraShuffle = shuffle(res).toString();
+				console.log(palabraShuffle);
+				var final = palabraShuffle.replace(/,/g,"");
+				console.log(final);
+
+				//Rellenando formulario
+				document.getElementById("nombre").value = final.toUpperCase();
+			}*/
+
+			//Comprueba palabra
+			
+		//	document.getElementById('palabra').addEventListener('input', alerta); ERROR
+
+			/*function alerta(){
+
+				var palabraUsuario = document.getElementById("palabra").value;
+				var palabraFinal = palabraUsuario.toUpperCase();
+				console.log(palabraFinal);
+
+				//Desabilitamos el boton ver solucion y habilitamos el boton nuevapalabra
+				if(palabraUsuario == ""){
+
+					document.getElementById("solucion").disabled = false;
+					document.getElementById("palabraNew").disabled = true;
+
+				}else{
+
+					document.getElementById("solucion").disabled = true;
+					document.getElementById("palabraNew").disabled = false;
+				}
+				
+
+				if(palabraFinal == random){
+
+					console.log("acertaste");
+					document.getElementById("acierta-falla").className = "intentos";
+					document.getElementById("acierta-falla").innerHTML = `Has acertado la palabra ${random}`;
+
+				}else{
+					console.log("no");
+					document.getElementById("acierta-falla").className = "error";
+					document.getElementById("acierta-falla").innerHTML = `La palabra ${palabraFinal} no coincide con el original`;
+				}
+			}*/
+
+
+			//Generar una nueva palabra
+	//		document.getElementById("palabraNew").addEventListener('click',nuevaPalabra);
+
+/*			function nuevaPalabra(){
+
+				generaPalabra();
+			}*/
+
+			//Ver solucion
+			//document.getElementById("solucion").addEventListener('click',verSolucion);
+
+			/*function verSolucion(){
+
+				document.getElementById("acierta-falla").className = "info";
+				document.getElementById("acierta-falla").innerHTML = `La palabra correcta es ${random}`;
+				document.getElementById("linea_formulario error").style.display = "none";
+			}*/
+		</script>
+		<script src="adivinapalabra.js"></script>
+	</body>
+</html>
+
+
+
